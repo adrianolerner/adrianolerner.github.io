@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos de Adriano Lerner</title>
+    <style>
+        :root {
+            --bg-color: #0d1117; /* Fundo estilo GitHub Dark */
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+
+        h1 { margin-bottom: 10px; font-size: 2.5rem; }
+        p.subtitle { color: var(--text-secondary); font-size: 1.2rem; }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .repo-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .repo-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            font-size: 0.8rem;
+        }
+
+        .tag {
+            padding: 2px 8px;
+            border-radius: 10px;
+            background-color: #21262d;
+            border: 1px solid var(--border);
+        }
+
+        .tag.php { color: #8892bf; }
+        .tag.python { color: #3572a5; }
+        .tag.docker { color: #2496ed; }
+
+        footer {
+            margin-top: 50px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Adriano Lerner</h1>
+        <p class="subtitle">Repositório Central de Projetos</p>
+    </header>
+
+    <div class="container">
+        <a href="https://github.com/adrianolerner/doeca" class="card" target="_blank">
+            <div>
+                <div class="repo-title">📂 doeca</div>
+                <div class="repo-desc">Diário Oficial Eletrônico de Código Aberto para prefeituras e câmaras municipais.</div>
+            </div>
+            <div class="tags">
+                <span class="tag php">PHP</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/adrianolerner/doeca-docker" class="card" target="_blank">
+            <div>
+                <div class="repo-title">🐳 doeca-docker</div>
+                <div class="repo-desc">Versão dockerizada do DOECA, pronta para uso em containers.</div>
+            </div>
+            <div class="tags">
+                <span class="tag php">PHP</span>
+                <span class="tag docker">Docker</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/adrianolerner/relatorio-sere" class="card" target="_blank">
+            <div>
+                <div class="repo-title">📊 relatorio-sere</div>
+                <div class="repo-desc">Gerador de Relatórios do SERE (SEED - PR) via API com Interface Gráfica.</div>
+            </div>
+            <div class="tags">
+                <span class="tag python">Python</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/adrianolerner/rss-to-api" class="card" target="_blank">
+            <div>
+                <div class="repo-title">🔄 rss-to-api</div>
+                <div class="repo-desc">Script para envio de publicação capturada de RSS para API.</div>
+            </div>
+            <div class="tags">
+                <span class="tag php">PHP</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/adrianolerner/lista-telefonica" class="card" target="_blank">
+            <div>
+                <div class="repo-title">📞 lista-telefonica</div>
+                <div class="repo-desc">Agenda/Lista Telefônica desenvolvida com PHP, JavaScript e MariaDB/MySQL.</div>
+            </div>
+            <div class="tags">
+                <span class="tag php">PHP</span>
+                <span class="tag">JS</span>
+                <span class="tag">MariaDB</span>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>Ver perfil completo no <a href="https://github.com/adrianolerner">GitHub</a></p>
+    </footer>
+
+</body>
+</html>
