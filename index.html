@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos de Adriano Lerner</title>
+    <title>Portfólio de Adriano Biesek</title>
     <style>
         :root {
             --bg-color: #0d1117; /* Fundo estilo GitHub Dark */
             --card-bg: #161b22;
+            --section-bg: #1c2128; /* Um pouco mais claro para destaque */
             --text-main: #c9d1d9;
             --text-secondary: #8b949e;
             --accent: #58a6ff;
@@ -23,16 +24,65 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            line-height: 1.6;
         }
 
         header {
             text-align: center;
             margin-bottom: 40px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
-        h1 { margin-bottom: 10px; font-size: 2.5rem; }
+        h1 { margin-bottom: 10px; font-size: 2.5rem; color: var(--text-main); }
+        h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 0;}
+        h3 { color: var(--text-main); margin-bottom: 10px; }
         p.subtitle { color: var(--text-secondary); font-size: 1.2rem; }
+
+        /* --- Seção Sobre Mim --- */
+        .about-section {
+            max-width: 1000px;
+            width: 100%;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-sizing: border-box;
+        }
+
+        .about-summary {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .about-summary strong { color: var(--accent); }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-block ul {
+            padding-left: 20px;
+            color: var(--text-secondary);
+            margin-top: 0;
+        }
+        
+        .skill-block li { margin-bottom: 5px; }
+
+        .profile-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* --- Grid de Projetos --- */
+        .projects-title {
+             max-width: 1000px; width: 100%; text-align: left; margin-bottom: 20px;
+        }
 
         .container {
             display: grid;
@@ -78,6 +128,7 @@
             display: flex;
             gap: 10px;
             font-size: 0.8rem;
+            flex-wrap: wrap;
         }
 
         .tag {
@@ -95,6 +146,7 @@
             margin-top: 50px;
             color: var(--text-secondary);
             font-size: 0.9rem;
+            margin-bottom: 20px;
         }
         
         footer a { color: var(--accent); text-decoration: none; }
@@ -103,10 +155,51 @@
 <body>
 
     <header>
-        <h1>Adriano Lerner</h1>
-        <p class="subtitle">Repositório Central de Projetos</p>
+        <h1>Adriano Biesek</h1>
+        <p class="subtitle">Profissional de TI | Infraestrutura, Desenvolvimento e Setor Público</p>
     </header>
 
+    <section class="about-section">
+        <h2>👋 Sobre mim</h2>
+        <p class="about-summary">
+            Com mais de <strong>15 anos de experiência</strong>, sou um profissional de TI que atua na intersecção entre infraestrutura e desenvolvimento. Atualmente servidor público municipal em Castro/PR, lido diariamente com desafios reais em ambientes corporativos e governamentais. Minha trajetória é construída na prática: resolvendo problemas, implementando soluções e adaptando tecnologia à realidade do usuário final com foco em estabilidade e segurança.
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill-block">
+                <h3>🔹 Infraestrutura & Redes</h3>
+                <ul>
+                    <li>Administração de Windows Server e Active Directory (GPOs, Segurança).</li>
+                    <li>Gerenciamento de redes corporativas, fibra óptica e ambientes distribuídos.</li>
+                    <li>Virtualização (Hyper-V) e políticas de continuidade.</li>
+                    <li>Segurança da informação e análise de logs em ambientes críticos.</li>
+                </ul>
+            </div>
+            <div class="skill-block">
+                <h3>🧠 Desenvolvimento & Automação</h3>
+                <ul>
+                    <li>Desenvolvimento de soluções internas (PHP, MySQL, Bootstrap).</li>
+                    <li>Automação de tarefas administrativas com PowerShell e Python.</li>
+                    <li>Criação de relatórios via APIs e integração de sistemas.</li>
+                    <li>Projetos Mobile (Android WebView) e containerização (Docker).</li>
+                </ul>
+            </div>
+             <div class="skill-block">
+                <h3>🏛️ Tecnologia Pública</h3>
+                <ul>
+                    <li>Foco na continuidade e eficiência dos serviços essenciais ao cidadão.</li>
+                    <li>Conformidade com normas internas e legislação.</li>
+                    <li>Desenvolvimento de soluções práticas e auditáveis com recursos limitados.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="profile-footer">
+            🎯 Perfil prático e objetivo. Acredito que tecnologia só faz sentido quando funciona, é segura e facilita a vida das pessoas — seja do usuário final, do servidor público ou da equipe técnica.
+        </p>
+    </section>
+
+    <h2 class="projects-title">🚀 Projetos em Destaque</h2>
     <div class="container">
         <a href="https://github.com/adrianolerner/doeca" class="card" target="_blank">
             <div>
@@ -115,6 +208,7 @@
             </div>
             <div class="tags">
                 <span class="tag php">PHP</span>
+                <span class="tag">Setor Público</span>
             </div>
         </a>
 
@@ -136,34 +230,36 @@
             </div>
             <div class="tags">
                 <span class="tag python">Python</span>
+                <span class="tag">API</span>
             </div>
         </a>
 
         <a href="https://github.com/adrianolerner/rss-to-api" class="card" target="_blank">
             <div>
                 <div class="repo-title">🔄 rss-to-api</div>
-                <div class="repo-desc">Script para envio de publicação capturada de RSS para API.</div>
+                <div class="repo-desc">Script em PHP para captura e envio de feeds RSS para APIs externas.</div>
             </div>
             <div class="tags">
                 <span class="tag php">PHP</span>
+                <span class="tag">Automação</span>
             </div>
         </a>
 
         <a href="https://github.com/adrianolerner/lista-telefonica" class="card" target="_blank">
             <div>
                 <div class="repo-title">📞 lista-telefonica</div>
-                <div class="repo-desc">Agenda/Lista Telefônica desenvolvida com PHP, JavaScript e MariaDB/MySQL.</div>
+                <div class="repo-desc">Agenda/Lista Telefônica corporativa desenvolvida com PHP, JavaScript e MariaDB.</div>
             </div>
             <div class="tags">
                 <span class="tag php">PHP</span>
-                <span class="tag">JS</span>
                 <span class="tag">MariaDB</span>
+                <span class="tag">Ferramenta Interna</span>
             </div>
         </a>
     </div>
 
     <footer>
-        <p>Ver perfil completo no <a href="https://github.com/adrianolerner">GitHub</a></p>
+        <p>Ver histórico completo no <a href="https://github.com/adrianolerner">GitHub</a></p>
     </footer>
 
 </body>
