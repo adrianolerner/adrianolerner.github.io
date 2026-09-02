@@ -1,278 +1,929 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Adriano Biesek</title>
-    <style>
-        :root {
-            --bg-color: #0d1117; /* Fundo estilo GitHub Dark */
-            --card-bg: #161b22;
-            --section-bg: #1c2128; /* Um pouco mais claro para destaque */
-            --text-main: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent: #58a6ff;
-            --border: #30363d;
-        }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1.6;
-        }
+```
+<meta name="description" content="Portfólio de Adriano Lerner Biesek — Infraestrutura, desenvolvimento, automação e tecnologia aplicada ao setor público.">
+<meta name="author" content="Adriano Lerner Biesek">
+
+<title>Adriano Lerner Biesek | Portfólio</title>
+
+<style>
+    :root {
+        --bg-color: #0d1117;
+        --card-bg: #161b22;
+        --card-hover: #1c2128;
+        --section-bg: #161b22;
+        --text-main: #e6edf3;
+        --text-secondary: #8b949e;
+        --accent: #58a6ff;
+        --accent-2: #79c0ff;
+        --green: #3fb950;
+        --purple: #bc8cff;
+        --border: #30363d;
+        --shadow: rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        background:
+            radial-gradient(
+                circle at top,
+                rgba(88, 166, 255, 0.08),
+                transparent 35%
+            ),
+            var(--bg-color);
+
+        color: var(--text-main);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 25px 55px;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 3px solid var(--border);
+        margin-bottom: 20px;
+        box-shadow: 0 10px 35px var(--shadow);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        letter-spacing: -1px;
+    }
+
+    .subtitle {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+        max-width: 750px;
+        margin: 15px auto 25px;
+    }
+
+    .header-links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .header-links a {
+        text-decoration: none;
+        color: var(--accent);
+        border: 1px solid var(--border);
+        background: var(--card-bg);
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: .2s;
+    }
+
+    .header-links a:hover {
+        border-color: var(--accent);
+        background: var(--card-hover);
+    }
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 25px;
+    }
+
+    section {
+        margin-bottom: 55px;
+    }
+
+    .section-title {
+        color: var(--accent);
+        font-size: 1.7rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        margin-bottom: 25px;
+    }
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    .about-section {
+        background: var(--section-bg);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 32px;
+    }
+
+    .about-summary {
+        font-size: 1.08rem;
+        color: var(--text-main);
+    }
+
+    .about-summary strong {
+        color: var(--accent-2);
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .skill-block {
+        background: var(--bg-color);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 22px;
+    }
+
+    .skill-block h3 {
+        margin-top: 0;
+    }
+
+    .skill-block ul {
+        padding-left: 20px;
+        color: var(--text-secondary);
+        margin-bottom: 0;
+    }
+
+    .skill-block li {
+        margin-bottom: 8px;
+    }
+
+    .profile-footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+
+    /* =========================
+       DESTAQUE
+    ========================= */
+
+    .featured {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .featured-card {
+        position: relative;
+        background:
+            linear-gradient(
+                145deg,
+                rgba(88, 166, 255, .08),
+                transparent 60%
+            ),
+            var(--card-bg);
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 28px;
+        text-decoration: none;
+
+        transition:
+            transform .2s,
+            border-color .2s,
+            box-shadow .2s;
+    }
+
+    .featured-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: 0 12px 30px var(--shadow);
+    }
+
+    .featured-card .icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .featured-card h3 {
+        margin: 0 0 10px;
+        color: var(--accent-2);
+        font-size: 1.35rem;
+    }
+
+    .featured-card p {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+       PROJETOS
+    ========================= */
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 18px;
+    }
+
+    .project-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 22px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        text-decoration: none;
+
+        transition:
+            transform .2s,
+            border-color .2s,
+            background .2s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        background: var(--card-hover);
+    }
+
+    .repo-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 10px;
+    }
+
+    .repo-desc {
+        color: var(--text-secondary);
+        font-size: .95rem;
+        line-height: 1.55;
+        margin-bottom: 20px;
+    }
+
+    .tags {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        padding: 3px 9px;
+        border-radius: 20px;
+        background: #21262d;
+        border: 1px solid var(--border);
+        font-size: .78rem;
+        color: var(--text-secondary);
+    }
+
+    .tag.python {
+        color: #79c0ff;
+    }
+
+    .tag.php {
+        color: #bc8cff;
+    }
+
+    .tag.vue {
+        color: #3fb950;
+    }
+
+    .tag.docker {
+        color: #58a6ff;
+    }
+
+    /* =========================
+       ÁREAS
+    ========================= */
+
+    .areas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+
+    .area {
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--card-bg);
+    }
+
+    .area strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--text-main);
+    }
+
+    .area span {
+        color: var(--text-secondary);
+        font-size: .9rem;
+    }
+
+    /* =========================
+       GITHUB CTA
+    ========================= */
+
+    .github-cta {
+        text-align: center;
+        padding: 45px 25px;
+        background:
+            linear-gradient(
+                145deg,
+                rgba(88,166,255,.08),
+                rgba(188,140,255,.05)
+            ),
+            var(--card-bg);
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+    }
+
+    .github-cta h2 {
+        margin-top: 0;
+        border: 0;
+    }
+
+    .github-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 11px 22px;
+        border-radius: 7px;
+        background: var(--accent);
+        color: #0d1117;
+        text-decoration: none;
+        font-weight: 600;
+        transition: .2s;
+    }
+
+    .github-button:hover {
+        background: var(--accent-2);
+        transform: translateY(-2px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        max-width: 1100px;
+        margin: 60px auto 0;
+        padding: 30px 25px 35px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: .9rem;
+    }
+
+    footer a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 600px) {
 
         header {
-            text-align: center;
-            margin-bottom: 40px;
-            margin-top: 30px;
+            padding-top: 55px;
         }
 
-        h1 { margin-bottom: 10px; font-size: 2.5rem; color: var(--text-main); }
-        h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 0;}
-        h3 { color: var(--text-main); margin-bottom: 10px; }
-        p.subtitle { color: var(--text-secondary); font-size: 1.2rem; }
-
-        /* --- Seção Sobre Mim --- */
         .about-section {
-            max-width: 1000px;
-            width: 100%;
-            background-color: var(--section-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-sizing: border-box;
+            padding: 22px;
         }
 
-        .about-summary {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        
-        .about-summary strong { color: var(--accent); }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        .section-title {
+            font-size: 1.45rem;
         }
 
-        .skill-block ul {
-            padding-left: 20px;
-            color: var(--text-secondary);
-            margin-top: 0;
-        }
-        
-        .skill-block li { margin-bottom: 5px; }
-
-        .profile-footer {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        /* --- Grid de Projetos --- */
-        .projects-title {
-             max-width: 1000px; width: 100%; text-align: left; margin-bottom: 20px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
+        .featured-card,
+        .project-card {
             padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
+    }
+</style>
+```
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .repo-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .repo-desc {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .tags {
-            display: flex;
-            gap: 10px;
-            font-size: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 2px 8px;
-            border-radius: 10px;
-            background-color: #21262d;
-            border: 1px solid var(--border);
-        }
-
-        .tag.php { color: #8892bf; }
-        .tag.python { color: #3572a5; }
-        .tag.docker { color: #2496ed; }
-
-        footer {
-            margin-top: 50px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        
-        footer a { color: var(--accent); text-decoration: none; }
-    </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Adriano Biesek</h1>
-        <p class="subtitle">Profissional de TI | Infraestrutura, Desenvolvimento e Setor Público</p>
-    </header>
+<header>
 
-    <section class="about-section">
-        <h2>👋 Sobre mim</h2>
+```
+<img
+    class="avatar"
+    src="https://github.com/adrianolerner.png"
+    alt="Adriano Lerner Biesek"
+>
+
+<h1>Adriano Lerner Biesek</h1>
+
+<p class="subtitle">
+    Tecnologia, infraestrutura, desenvolvimento e automação
+    aplicados a problemas reais.
+</p>
+
+<div class="header-links">
+    <a href="https://github.com/adrianolerner" target="_blank">
+        GitHub
+    </a>
+
+    <a href="https://castro.atende.net" target="_blank">
+        Prefeitura de Castro
+    </a>
+</div>
+```
+
+</header>
+
+<main>
+
+```
+<!-- SOBRE -->
+
+<section>
+
+    <div class="about-section">
+
+        <h2 class="section-title">👋 Sobre mim</h2>
+
         <p class="about-summary">
-            Com mais de <strong>15 anos de experiência</strong>, sou um profissional de TI que atua na intersecção entre infraestrutura e desenvolvimento. Atualmente servidor público municipal em Castro/PR, lido diariamente com desafios reais em ambientes corporativos e governamentais. Minha trajetória é construída na prática: resolvendo problemas, implementando soluções e adaptando tecnologia à realidade do usuário final com foco em estabilidade e segurança.
+            Sou um profissional de TI com mais de
+            <strong>15 anos de experiência</strong>,
+            atuando principalmente na administração de infraestrutura,
+            redes, servidores e serviços de tecnologia.
+        </p>
+
+        <p class="about-summary">
+            Atualmente trabalho no setor público municipal,
+            onde a tecnologia precisa resolver problemas concretos:
+            manter serviços disponíveis, proteger informações,
+            integrar sistemas e, principalmente, facilitar o trabalho
+            das pessoas.
+        </p>
+
+        <p class="about-summary">
+            Não sou desenvolvedor de carreira. Gosto de
+            <strong>construir ferramentas quando percebo que um
+            problema pode ser resolvido com tecnologia</strong>.
+            Por isso, meus projetos transitam naturalmente entre
+            infraestrutura, desenvolvimento web, automação,
+            monitoramento e administração de ambientes.
         </p>
 
         <div class="skills-grid">
-            <div class="skill-block">
-                <h3>🔹 Infraestrutura & Redes</h3>
-                <ul>
-                    <li>Administração de Windows Server e Active Directory (GPOs, Segurança).</li>
-                    <li>Gerenciamento de redes corporativas, fibra óptica e ambientes distribuídos.</li>
-                    <li>Virtualização (Hyper-V) e políticas de continuidade.</li>
-                    <li>Segurança da informação e análise de logs em ambientes críticos.</li>
-                </ul>
-            </div>
-            <div class="skill-block">
-                <h3>🧠 Desenvolvimento & Automação</h3>
-                <ul>
-                    <li>Desenvolvimento de soluções internas (PHP, MySQL, Bootstrap).</li>
-                    <li>Automação de tarefas administrativas com PowerShell e Python.</li>
-                    <li>Criação de relatórios via APIs e integração de sistemas.</li>
-                    <li>Projetos Mobile (Android WebView) e containerização (Docker).</li>
-                </ul>
-            </div>
-             <div class="skill-block">
-                <h3>🏛️ Tecnologia Pública</h3>
-                <ul>
-                    <li>Foco na continuidade e eficiência dos serviços essenciais ao cidadão.</li>
-                    <li>Conformidade com normas internas e legislação.</li>
-                    <li>Desenvolvimento de soluções práticas e auditáveis com recursos limitados.</li>
-                </ul>
-            </div>
-        </div>
-        
-        <p class="profile-footer">
-            🎯 Perfil prático e objetivo. Acredito que tecnologia só faz sentido quando funciona, é segura e facilita a vida das pessoas — seja do usuário final, do servidor público ou da equipe técnica.
-        </p>
-    </section>
 
-    <h2 class="projects-title">🚀 Projetos em Destaque</h2>
-    <div class="container">
-        <a href="https://github.com/adrianolerner/doeca" class="card" target="_blank">
-            <div>
-                <div class="repo-title">📂 DOECA</div>
-                <div class="repo-desc">Diário Oficial Eletrônico de Código Aberto para prefeituras e câmaras municipais.</div>
+            <div class="skill-block">
+                <h3>🖥️ Infraestrutura & Redes</h3>
+
+                <ul>
+                    <li>Windows Server e Active Directory</li>
+                    <li>Redes corporativas e ambientes distribuídos</li>
+                    <li>Virtualização e servidores</li>
+                    <li>DNS, DHCP e serviços de rede</li>
+                    <li>Monitoramento e análise de disponibilidade</li>
+                    <li>Segurança e continuidade de serviços</li>
+                </ul>
             </div>
+
+
+            <div class="skill-block">
+                <h3>💻 Desenvolvimento & Automação</h3>
+
+                <ul>
+                    <li>PHP, Python, JavaScript e Shell Script</li>
+                    <li>FastAPI, Vue.js e aplicações web</li>
+                    <li>MariaDB / MySQL e PostgreSQL</li>
+                    <li>Docker e Docker Compose</li>
+                    <li>APIs e integração entre sistemas</li>
+                    <li>PowerShell e automação administrativa</li>
+                </ul>
+            </div>
+
+
+            <div class="skill-block">
+                <h3>🏛️ Tecnologia no Setor Público</h3>
+
+                <ul>
+                    <li>Soluções para administração pública</li>
+                    <li>Digitalização de processos</li>
+                    <li>Gestão e documentação de infraestrutura</li>
+                    <li>Monitoramento de serviços públicos</li>
+                    <li>Automação de tarefas administrativas</li>
+                    <li>Software livre e soluções autohospedadas</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <p class="profile-footer">
+            🎯 Minha abordagem é simples: tecnologia precisa funcionar.
+            Se uma solução é segura, estável, automatiza trabalho
+            repetitivo e torna a vida do usuário mais fácil,
+            então ela está cumprindo seu papel.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PROJETOS EM DESTAQUE -->
+
+<section>
+
+    <h2 class="section-title">🚀 Projetos em destaque</h2>
+
+    <div class="featured">
+
+        <a
+            class="featured-card"
+            href="https://github.com/adrianolerner/bnet-doc"
+            target="_blank"
+        >
+
+            <div class="icon">🗂️</div>
+
+            <h3>BNET DOC</h3>
+
+            <p>
+                Sistema autohospedado para documentação dinâmica
+                de infraestrutura de TI, utilizando FastAPI,
+                PostgreSQL, LDAP/Active Directory e Docker.
+            </p>
+
+            <div class="tags">
+                <span class="tag python">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag docker">Docker</span>
+                <span class="tag">LDAP</span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="featured-card"
+            href="https://github.com/adrianolerner/bnet-contratos"
+            target="_blank"
+        >
+
+            <div class="icon">📑</div>
+
+            <h3>BNET Contratos</h3>
+
+            <p>
+                Sistema de gestão e fiscalização de contratos,
+                com fornecedores, pagamentos, processos,
+                alertas, dashboard e relatórios.
+            </p>
+
+            <div class="tags">
+                <span class="tag python">Python</span>
+                <span class="tag vue">Vue.js</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag docker">Docker</span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="featured-card"
+            href="https://github.com/adrianolerner/bnet-ping"
+            target="_blank"
+        >
+
+            <div class="icon">📡</div>
+
+            <h3>BNET Ping</h3>
+
+            <p>
+                Monitoramento de disponibilidade de dispositivos
+                e servidores, acompanhando latência, jitter,
+                perda de pacotes e uptime.
+            </p>
+
+            <div class="tags">
+                <span class="tag php">PHP</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Monitoramento</span>
+                <span class="tag">Uptime</span>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- OUTROS PROJETOS -->
+
+<section>
+
+    <h2 class="section-title">📂 Outros projetos</h2>
+
+    <div class="projects-grid">
+
+
+        <a
+            class="project-card"
+            href="https://github.com/adrianolerner/doeca"
+            target="_blank"
+        >
+
+            <div>
+                <div class="repo-title">📰 DOECA</div>
+
+                <div class="repo-desc">
+                    Diário Oficial Eletrônico de Código Aberto
+                    desenvolvido para utilização por prefeituras
+                    e câmaras municipais.
+                </div>
+            </div>
+
             <div class="tags">
                 <span class="tag php">PHP</span>
                 <span class="tag">Setor Público</span>
+                <span class="tag">Open Source</span>
             </div>
+
         </a>
 
-        <a href="https://github.com/adrianolerner/doeca-docker" class="card" target="_blank">
+
+        <a
+            class="project-card"
+            href="https://github.com/adrianolerner/doeca-docker"
+            target="_blank"
+        >
+
             <div>
-                <div class="repo-title">🐳 DOECA (docker)</div>
-                <div class="repo-desc">Versão dockerizada do DOECA, pronta para uso em containers.</div>
+                <div class="repo-title">🐳 DOECA Docker</div>
+
+                <div class="repo-desc">
+                    Versão dockerizada do DOECA, preparada para
+                    implantação utilizando containers.
+                </div>
             </div>
+
             <div class="tags">
                 <span class="tag php">PHP</span>
                 <span class="tag docker">Docker</span>
             </div>
+
         </a>
 
-        <a href="https://github.com/adrianolerner/relatorio-sere" class="card" target="_blank">
+
+        <a
+            class="project-card"
+            href="https://github.com/adrianolerner/lista-telefonica"
+            target="_blank"
+        >
+
+            <div>
+                <div class="repo-title">📞 Lista Telefônica</div>
+
+                <div class="repo-desc">
+                    Agenda e lista telefônica corporativa
+                    desenvolvida com PHP, JavaScript e
+                    MariaDB/MySQL.
+                </div>
+            </div>
+
+            <div class="tags">
+                <span class="tag php">PHP</span>
+                <span class="tag">MariaDB</span>
+                <span class="tag">JavaScript</span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="project-card"
+            href="https://github.com/adrianolerner/lista-telefonica-docker"
+            target="_blank"
+        >
+
+            <div>
+                <div class="repo-title">📞 Lista Telefônica Docker</div>
+
+                <div class="repo-desc">
+                    Versão containerizada da Lista Telefônica,
+                    facilitando implantação e manutenção.
+                </div>
+            </div>
+
+            <div class="tags">
+                <span class="tag php">PHP</span>
+                <span class="tag">MariaDB</span>
+                <span class="tag docker">Docker</span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="project-card"
+            href="https://github.com/adrianolerner/rss-to-api"
+            target="_blank"
+        >
+
+            <div>
+                <div class="repo-title">🔄 RSS to API</div>
+
+                <div class="repo-desc">
+                    Script para captura de publicações através
+                    de feeds RSS e envio para APIs externas.
+                </div>
+            </div>
+
+            <div class="tags">
+                <span class="tag php">PHP</span>
+                <span class="tag">API</span>
+                <span class="tag">Automação</span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="project-card"
+            href="https://github.com/adrianolerner/relatorio-sere"
+            target="_blank"
+        >
+
             <div>
                 <div class="repo-title">📊 Relatório SERE</div>
-                <div class="repo-desc">Gerador de Relatórios do SERE (SEED - PR) via API com Interface Gráfica.</div>
+
+                <div class="repo-desc">
+                    Gerador de relatórios do SERE da Secretaria
+                    de Estado da Educação do Paraná através
+                    de API, com interface gráfica.
+                </div>
             </div>
+
             <div class="tags">
                 <span class="tag python">Python</span>
                 <span class="tag">API</span>
-            </div>
-        </a>
-
-        <a href="https://github.com/adrianolerner/rss-to-api" class="card" target="_blank">
-            <div>
-                <div class="repo-title">🔄 RSS to API</div>
-                <div class="repo-desc">Script em PHP para captura e envio de feeds RSS para APIs externas.</div>
-            </div>
-            <div class="tags">
-                <span class="tag php">PHP</span>
                 <span class="tag">Automação</span>
             </div>
+
         </a>
 
-        <a href="https://github.com/adrianolerner/lista-telefonica" class="card" target="_blank">
-            <div>
-                <div class="repo-title">📞 Lista Telefônica</div>
-                <div class="repo-desc">Agenda/Lista Telefônica corporativa desenvolvida com PHP, JavaScript e MariaDB.</div>
-            </div>
-            <div class="tags">
-                <span class="tag php">PHP</span>
-                <span class="tag">MariaDB</span>
-                <span class="tag">Ferramenta Interna</span>
-            </div>
-        </a>
 
-         <a href="https://github.com/adrianolerner/lista-telefonica-docker" class="card" target="_blank">
-            <div>
-                <div class="repo-title">📞 Lista Telefônica (docker)</div>
-                <div class="repo-desc">Versão dockerizada da Lista Telefônica</div>
-            </div>
-            <div class="tags">
-                <span class="tag php">PHP</span>
-                <span class="tag">MariaDB</span>
-                <span class="tag">Ferramenta Interna</span>
-            </div>
-        </a>
     </div>
 
-    <footer>
-        <p>Ver histórico completo no <a href="https://github.com/adrianolerner">GitHub</a></p>
-    </footer>
+</section>
+
+
+<!-- ÁREAS DE ATUAÇÃO -->
+
+<section>
+
+    <h2 class="section-title">🧩 Áreas que conectam meus projetos</h2>
+
+    <div class="areas">
+
+        <div class="area">
+            <strong>🖥️ Infraestrutura</strong>
+            <span>
+                Servidores, redes, AD, virtualização e serviços.
+            </span>
+        </div>
+
+        <div class="area">
+            <strong>⚙️ Automação</strong>
+            <span>
+                Scripts, APIs e eliminação de tarefas repetitivas.
+            </span>
+        </div>
+
+        <div class="area">
+            <strong>🔐 Segurança</strong>
+            <span>
+                Autenticação, controle de acesso e proteção de dados.
+            </span>
+        </div>
+
+        <div class="area">
+            <strong>🐳 DevOps</strong>
+            <span>
+                Docker, ambientes autohospedados e implantação.
+            </span>
+        </div>
+
+        <div class="area">
+            <strong>🏛️ Governo Digital</strong>
+            <span>
+                Sistemas voltados às necessidades da administração pública.
+            </span>
+        </div>
+
+        <div class="area">
+            <strong>📊 Sistemas de Gestão</strong>
+            <span>
+                Informação, monitoramento, documentação e processos.
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GITHUB -->
+
+<section>
+
+    <div class="github-cta">
+
+        <h2>🐙 Mais projetos no GitHub</h2>
+
+        <p>
+            Código, experimentos, ferramentas e projetos desenvolvidos
+            ao longo da minha jornada na tecnologia.
+        </p>
+
+        <a
+            class="github-button"
+            href="https://github.com/adrianolerner"
+            target="_blank"
+        >
+            Ver GitHub
+        </a>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+
+```
+<p>
+    © 2026 Adriano Lerner Biesek
+</p>
+
+<p>
+    Desenvolvido com HTML, CSS e bastante curiosidade tecnológica.
+</p>
+
+<p>
+    <a
+        href="https://github.com/adrianolerner"
+        target="_blank"
+    >
+        github.com/adrianolerner
+    </a>
+</p>
+```
+
+</footer>
 
 </body>
 </html>
